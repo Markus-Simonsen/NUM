@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "complex": "cpp",
+        "cmath": "cpp",
+        "limits": "cpp",
+        "random": "cpp",
+        "chrono": "cpp",
+        "*.tcc": "cpp"
+    }
+}
