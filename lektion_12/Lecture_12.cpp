@@ -187,8 +187,6 @@ int main()
 	// number of points
 	int N = 2;
 
-	// FDM_1it(a, b, alpha, beta, N);
-
 	FDM(a, b, alpha, beta, N);
 
 	return 0;

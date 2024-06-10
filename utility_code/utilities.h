@@ -46,13 +46,14 @@ namespace util
 	void printDiag(MatDoub mat, string symbol = "")
 	{
 		if (symbol.compare(""))
-			cout << YELLOW << symbol << "	MatrixDiag " << mat.nrows() << "x" << mat.ncols() << ":" << RESET << endl;
+			cout << YELLOW << symbol << "	MatrixDiags " << mat.nrows() << "x" << mat.ncols() << ":" << RESET << endl;
 		double nmax = mat.nrows() < mat.nrows() ? mat.nrows() : mat.nrows();
 		for (int n = 0; n < nmax; n++)
 		{
 			cout << setw(15) << mat[n][n] << "\t";
 		}
-		cout << endl;
+		cout << "\n"
+			 << endl;
 	}
 
 	void title(string title)
