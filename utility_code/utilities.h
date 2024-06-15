@@ -26,16 +26,40 @@ using namespace std;
 
 namespace util
 {
+	int findMaxWidth(const MatDoub &mat)
+	{
+		int maxWidth = 0;
+		for (int m = 0; m < mat.nrows(); ++m)
+		{
+			for (int n = 0; n < mat.ncols(); ++n)
+			{
+				stringstream ss;
+				ss << mat[m][n];
+				int length = ss.str().length();
+				if (length > maxWidth)
+				{
+					maxWidth = length;
+				}
+			}
+		}
+		return maxWidth;
+	}
+
 	void print(MatDoub mat, string symbol = "")
 	{
-		if (symbol.compare(""))
-			cout << YELLOW << symbol << "	Matrix " << mat.nrows() << "x" << mat.ncols() << ":" << RESET << endl;
+		if (!symbol.empty())
+		{
+			cout << YELLOW << symbol << " Matrix " << mat.nrows() << "x" << mat.ncols() << ":" << RESET << endl;
+		}
+
+		// Find the maximum width based on the longest element
+		int maxWidth = findMaxWidth(mat);
 
 		for (int m = 0; m < mat.nrows(); m++)
 		{
 			for (int n = 0; n < mat.ncols(); n++)
 			{
-				cout << setw(15) << mat[m][n] << "\t";
+				cout << setw(maxWidth) << mat[m][n] << "\t";
 			}
 			cout << endl;
 		}
